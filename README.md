@@ -34,7 +34,7 @@ This looks pretty fancy but it is really just a linear equation with this extra 
 	 - subject age (`age`)
 	 - subject sex (`sex`)
  	 - Global Intercept
-	 - day of subject's baseline visit (`day_1` ... `day_7`). Each baseline visit was 7 days. This made date a categorical variable rather than continuous. A small part of `SAAS` code was used to convert `date` variable type.
+	 - day of subject's baseline visit (`day_1` ... `day_7`). Each baseline visit was 7 days. This made date a categorical variable rather than continuous. A small part of `SAAS` code was used to convert `date` variable type:
  ```saas
 data walk1;
 set walk.merged_totaldata_initialanalysis;
