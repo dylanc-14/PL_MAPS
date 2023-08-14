@@ -33,6 +33,7 @@ This looks pretty fancy but it is really just a linear equation with this extra 
 	 - total daily precipitation (`precip`)
 	 - subject age (`age`)
 	 - subject sex (`sex`)
+ 	 - Global Intercept
 	 - day of subject's baseline visit (`day_1` ... `day_7`). Each baseline visit was 7 days. This made date a categorical variable rather than continuous. A small part of `SAAS` code was used to convert `date` variable type.
  ```saas
 data walk1;
@@ -50,9 +51,8 @@ day+1;
 by subject_id;
 if first.subject_id=1 then day=1;
 run;
-```
-    		
-	 - Global Intercept
+```	
+
 -  $\beta$ - **Fixed Effects Vector** - *what we want!* This is the $p * 1$ vector of coefficients that represent the associations between our climate and step counts.
 - $Z$ - **Random Effects Design Matrix** -  An $n * l$ matrix corresponding to $\mu$. In this case $l = 1$ since we are only considering a random intercept.
 - $\mu$ - **Random Effects Vector** - Randomly sampled variables go into this matrix to account for differences among each `subject_id`
